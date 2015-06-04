@@ -101,9 +101,12 @@ start(_StartType, _StartArgs) ->
                                           [true, false],
                                           false),
 
-            riak_core_cli_registry:load_schema(),
-            riak_core_cli_registry:register_node_finder(),
-            riak_core_cli_registry:register_cli(),
+            %% Commenting out because we don't need this for our
+            %% lightpad app:
+
+            %% riak_core_cli_registry:load_schema(),
+            %% riak_core_cli_registry:register_node_finder(),
+            %% riak_core_cli_registry:register_cli(),
 
             {ok, Pid};
         {error, Reason} ->
